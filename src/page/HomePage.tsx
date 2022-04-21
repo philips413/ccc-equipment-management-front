@@ -1,17 +1,19 @@
 import React from "react"
-import { Button } from "reactstrap";
-import styled from "styled-components";
+import {Content} from "../App";
+import Header from "./layout/Header";
 
-const MainWrapper = styled.div`
-  
-`
 
 const HomePage = () => {
-    return (
-        <React.Fragment>
-            <Button color={"primary"}>클릭!</Button>
-        </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <Content>
+        <Header title={"홈"} />
+        <main>
+          TEST
+        </main>
+      </Content>
+    </React.Fragment>
+  )
 }
 
 
