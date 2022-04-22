@@ -2,7 +2,9 @@ import {Routes} from "react-router-dom";
 import React from "react";
 import styled from "styled-components";
 import {Route} from "react-router";
-import AdminHomePage from "./admin/AdminHomePage";
+import AdminHomePage from "./AdminHomePage";
+import EquipmentListPage from "./EquipmentListPage";
+import UserListPage from "./UserListPage";
 
 
 const AdminContainer = styled.div`
@@ -17,6 +19,8 @@ const AdminPage = () => {
       <AdminContainer>
         <Routes>
           <Route path={""} element={<AdminHomePage />} />
+          <Route path={"/equipments"} element={<EquipmentListPage />} />
+          <Route path={"/users"} element={<UserListPage />} />
         </Routes>
       </AdminContainer>
     </>

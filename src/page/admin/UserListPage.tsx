@@ -1,14 +1,14 @@
 import AdminHeader from "./AdminHeader";
 
-const AdminHomePage = () => {
+const UserListPage = () => {
   return (
     <>
       <AdminHeader />
       <main>
-        TEST
+        유저리스트
       </main>
     </>
   )
 }
 
-export default AdminHomePage;
+export default UserListPage;

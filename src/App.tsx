@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {Route} from "react-router";
 import "./assets/css/style.scss";
 import ClientPage from "./page/ClientPage";
-import AdminPage from "./page/AdminPage";
+import AdminPage from "./page/admin/AdminPage";
 
 const Wrapper = styled.div`
   position: relative;
