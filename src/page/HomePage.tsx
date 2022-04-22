@@ -1,6 +1,7 @@
 import React from "react"
 import {Content} from "../App";
 import Header from "./layout/Header";
+import Footer from "./layout/Footer";
 
 
 const HomePage = () => {
@@ -9,9 +10,10 @@ const HomePage = () => {
       <Content>
         <Header title={"홈"} />
         <main>
-          TEST
+          동해물과 백두산이 마르고 닳도록 하나님이 보우하사 우리나라 만세
         </main>
       </Content>
+      <Footer />
     </React.Fragment>
   )
 }

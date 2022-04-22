@@ -1,5 +1,7 @@
 import {Content} from "../App";
 import Header from "./layout/Header";
+import React from "react";
+import Footer from "./layout/Footer";
 
 const MyPage = () => {
   return (
@@ -9,6 +11,7 @@ const MyPage = () => {
         <main>
           TEST333
         </main>
+        <Footer />
       </Content>
     </>
   )
