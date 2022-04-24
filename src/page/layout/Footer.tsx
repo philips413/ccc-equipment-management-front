@@ -3,7 +3,13 @@ import styled from "styled-components";
 
 const FooterDiv = styled.footer`
   textAlign: "center";
+  max-width: 750px;
+  width: 100%;
+  bottom: 0px;
+  position: fixed;
+  display: flex;
   div {
+    width: 100%;
     text-align: center;
     padding: 20px;
     background: #333;

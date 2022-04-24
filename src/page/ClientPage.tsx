@@ -10,23 +10,18 @@ const MainContainer = styled.div`
   position: relative;
   height: 100%;
   width: 750px;
-  footer {
-    max-width: 750px;
-    width: 100%;
-    bottom: 0px;
-    position: fixed;
-    display: flex;
-    div {
-      width: 100%;
-    }
-  }
+  
+`
+
+export const Content = styled.div`
+  position: relative;
+  width: 100%;
 `
 
 const ClientPage = () => {
   return (
     <>
       <MainContainer>
-        TEST
         <Routes>
           <Route path={""} element={<HomePage />} />
           <Route path={"/list"} element={<ListPage />} />

@@ -1,9 +1,19 @@
+import styled from "styled-components";
+
+const HeaderDiv = styled.header`
+  background: #333;
+  color: #FFF;
+  padding: 15px;
+`
+
 const Header = (props: any) => {
+
+
   return (
     <>
-      <header>
+      <HeaderDiv>
         {props.title}
-      </header>
+      </HeaderDiv>
     </>
   )
 }

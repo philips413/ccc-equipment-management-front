@@ -13,12 +13,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
 `
-
-
-export const Content = styled.div`
-  position: relative;
-  width: 100%;
-`
 function App() {
   return (
       <React.Fragment>

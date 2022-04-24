@@ -1,5 +1,5 @@
 import React from "react"
-import {Content} from "../App";
+import {Content} from "../page/ClientPage";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 
