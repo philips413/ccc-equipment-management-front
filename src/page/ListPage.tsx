@@ -1,4 +1,4 @@
-import {Content} from "../page/ClientPage";
+import {Contents} from "../page/ClientPage";
 import Header from "./layout/Header";
 import React from "react";
 import Footer from "./layout/Footer";
@@ -6,13 +6,13 @@ import Footer from "./layout/Footer";
 const ListPage = (props: any) => {
   return (
     <>
-      <Content>
+      <Contents>
         <Header title={"목록"}/>
         <main>
           TEST111
         </main>
         <Footer />
-      </Content>
+      </Contents>
     </>
   )
 }

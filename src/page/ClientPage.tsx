@@ -13,7 +13,7 @@ const MainContainer = styled.div`
   
 `
 
-export const Content = styled.div`
+export const Contents = styled.div`
   position: relative;
   width: 100%;
 `
