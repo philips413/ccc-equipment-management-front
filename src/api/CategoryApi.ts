@@ -1,11 +1,12 @@
 import {axiosGetRequest, axiosPostRequest} from "../config/AxiosConfig";
 
-interface CategoryApi {
+export interface Category {
+  categoryId?: number;
   categoryName: string;
   description?: string;
 }
 
-export async function createCategory(data: CategoryApi) {
+export async function createCategory(data: Category) {
   const result = await axiosPostRequest("/category", data);
   console.log(result.data);
 }

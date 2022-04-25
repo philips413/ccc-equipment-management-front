@@ -118,7 +118,7 @@ const CategoryPage = () => {
                 {
                   categorys.map((item:any, index: number) => {
                     return (
-                      <tr>
+                      <tr key={`tr${index}`}>
                         <td>{index + 1}</td>
                         <td>{item.categoryName}</td>
                         <td>{item.description}</td>
