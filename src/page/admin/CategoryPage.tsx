@@ -26,12 +26,14 @@ const CategoryPage = () => {
   const [categorys, setCategorys] = useState([]);
 
   useEffect(() => {
-    const fetchList = async () => {
-      const result = await categoryList();
-      setCategorys(result);
-    }
-    fetchList();
+    loadCategoryList();
   }, []);
+
+  const loadCategoryList = async () => {
+    const result = await categoryList();
+    setCategorys(result);
+  }
+
 
   const submitCategory = async () => {
     if (categoryName == null || categoryName == '') {
@@ -40,15 +42,14 @@ const CategoryPage = () => {
     }
     const setData = {categoryName, description};
     await createCategory(setData);
-    navigate(0)
+    await loadCategoryList();
   }
 
   return (
     <>
       <AdminHeader />
       <Contents>
-        <Card
-        >
+        <Card>
           <CardBody>
             <CardTitle tag="h5">
               카테고리 등록
