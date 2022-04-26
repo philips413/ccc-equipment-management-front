@@ -1,13 +1,11 @@
 import AdminHeader from "./AdminHeader";
 import {
   Button,
-  ButtonProps,
   Card,
   CardBody,
-  CardFooter,
   CardText,
   CardTitle,
-  Col,
+  Col, Form,
   FormGroup,
   Input,
   Label,
@@ -16,11 +14,9 @@ import {
 import {Contents} from "./AdminPage";
 import {useEffect, useState} from "react";
 import {categoryList, createCategory} from "../../api/CategoryApi";
-import { useNavigate } from "react-router-dom";
 
 const CategoryPage = () => {
 
-  const navigate = useNavigate();
   const [categoryName, setCategoryName] = useState("");
   const [description, setDescription] = useState("");
   const [categorys, setCategorys] = useState([]);
@@ -35,7 +31,8 @@ const CategoryPage = () => {
   }
 
 
-  const submitCategory = async () => {
+  const submitCategory = async (e:any) => {
+    e.preventDefault();
     if (categoryName == null || categoryName == '') {
       alert("카테고리명을 입력해주세요");
       return false;
@@ -55,49 +52,56 @@ const CategoryPage = () => {
               카테고리 등록
             </CardTitle>
             <CardText>
-              <FormGroup row>
-                <Label
-                  for="categoryName"
-                  sm={2}
-                >
-                  카테고리 명
-                </Label>
-                <Col sm={10}>
-                  <Input
-                    id="categoryName"
-                    name="categoryName"
-                    placeholder="카테고리명을 입력해주세요"
-                    type="text"
-                    onChange={(e) => setCategoryName(e.target.value)}
-                    value={categoryName}
-                  />
-                </Col>
-              </FormGroup>
-              <FormGroup row>
-                <Label
-                  for="description"
-                  sm={2}
-                >
-                  설명
-                </Label>
-                <Col sm={10}>
-                  <Input
-                    id="description"
-                    name="description"
-                    placeholder="설명 입력해주세요"
-                    type="text"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                  />
-                </Col>
-              </FormGroup>
+              <Form>
+                <FormGroup row>
+                  <Label
+                    for="categoryName"
+                    sm={2}
+                  >
+                    카테고리 명
+                  </Label>
+                  <Col sm={10}>
+                    <Input
+                      id="categoryName"
+                      name="categoryName"
+                      placeholder="카테고리명을 입력해주세요"
+                      type="text"
+                      onChange={(e) => setCategoryName(e.target.value)}
+                      value={categoryName}
+                    />
+                  </Col>
+                </FormGroup>
+                <FormGroup row>
+                  <Label
+                    for="description"
+                    sm={2}
+                  >
+                    설명
+                  </Label>
+                  <Col sm={10}>
+                    <Input
+                      id="description"
+                      name="description"
+                      placeholder="설명 입력해주세요"
+                      type="text"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    />
+                  </Col>
+                </FormGroup>
+                <FormGroup row>
+                  <Col sm={{
+                    offset: 2,
+                    size: 10
+                  }}>
+                    <Button type={"submit"} onClick={submitCategory}>
+                      등록
+                    </Button>
+                  </Col>
+                </FormGroup>
+              </Form>
             </CardText>
           </CardBody>
-          <CardFooter style={{textAlign: "right"}}>
-            <Button onClick={(e) => submitCategory()}>
-              등록
-            </Button>
-          </CardFooter>
         </Card>
         <br/>
         <Card>

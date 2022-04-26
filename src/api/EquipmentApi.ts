@@ -7,8 +7,8 @@ interface EquipmentRequest {
   description?: string;
   status?: string;
   qty: number;
-  maxUseQty?: number;
-  minUseQty?: number;
+  maxUseQty: number;
+  minUseQty: number;
 }
 
 const EQUIPMENT_PREFIX = "/equipment";
