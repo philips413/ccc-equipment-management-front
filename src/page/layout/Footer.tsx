@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterDiv = styled.footer`
+  height: 80px;
   textAlign: "center";
   max-width: 750px;
   width: 100%;
@@ -31,9 +32,8 @@ const Footer = () => {
   return (
     <>
       <FooterDiv className={"contentMenu"}>
-        <div>HOME</div>
-        <div>LIST</div>
-        <div>MYPAGE</div>
+        <div>장비목록</div>
+        <div>나의 현황</div>
       </FooterDiv>
     </>
   )
