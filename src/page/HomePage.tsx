@@ -1,18 +1,10 @@
 import React, {useEffect, useState} from "react"
-import {Contents} from "../page/ClientPage";
+import {ClientMain, Contents} from "../page/ClientPage";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import {equipmentList} from "../api/EquipmentApi";
+import {equipmentList, EquipmentRequest} from "../api/EquipmentApi";
 import {Card, CardBody, CardText, CardTitle} from "reactstrap";
-import styled from "styled-components";
 
-const ClientMain = styled.main`
-  margin-bottom: 90px;
-  .card{
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-`
 
 const HomePage = () => {
 
@@ -23,53 +15,26 @@ const HomePage = () => {
       setEquipments(data);
     }
     fetchData();
-  })
+  }, [])
 
   return (
     <React.Fragment>
       <Contents>
         <Header title={"홈"} />
         <ClientMain>
-          <Card>
-            <CardBody>
-              <CardTitle tag={"h3"}>TEST</CardTitle>
-              <CardText>TESTSETSTEST</CardText>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle tag={"h3"}>TEST</CardTitle>
-              <CardText>TESTSETSTEST</CardText>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle tag={"h3"}>TEST</CardTitle>
-              <CardText>TESTSETSTEST</CardText>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle tag={"h3"}>TEST</CardTitle>
-              <CardText>TESTSETSTEST</CardText>
-            </CardBody>
-          </Card>
-          <Card>
-            <CardBody>
-              <CardTitle tag={"h3"}>TEST</CardTitle>
-              <CardText>TESTSETSTEST</CardText>
-            </CardBody>
-          </Card>
           {
-            equipments.map((item: any, index: number) => {
+            equipments.map((item: EquipmentRequest, index: number) => {
               return (
-                <Card>
+                <Card key={`mainCard${index}`}>
                   <CardBody>
                     <CardTitle tag={"h3"}>
                       {item.name}
                     </CardTitle>
                     <CardText>
                       {item.description}
+                    </CardText>
+                    <CardText color={"primary"}>
+                      반출 가능 수량 : {item.qty}
                     </CardText>
                   </CardBody>
                 </Card>

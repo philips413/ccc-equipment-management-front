@@ -18,6 +18,15 @@ export const Contents = styled.div`
   width: 100%;
 `
 
+export const ClientMain = styled.main`
+  margin-bottom: 90px;
+  padding: 10px;
+  .card{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+`
+
 const ClientPage = () => {
   return (
     <>

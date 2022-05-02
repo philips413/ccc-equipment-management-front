@@ -1,6 +1,6 @@
 import {axiosGetRequest, axiosPostRequest} from "../config/AxiosConfig";
 
-interface EquipmentRequest {
+export interface EquipmentRequest {
   equipmentId?: number;
   name: string,
   category: number,
