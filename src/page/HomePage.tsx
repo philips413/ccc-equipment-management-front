@@ -3,11 +3,11 @@ import {ClientMain, Contents} from "../page/ClientPage";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import {equipmentList, EquipmentRequest} from "../api/EquipmentApi";
-import {Card, CardBody, CardText, CardTitle} from "reactstrap";
+import {Button, Card, CardBody, CardText, CardTitle} from "reactstrap";
+import {applyEquipment} from "../api/EquipmentManagerApi";
 
 
 const HomePage = () => {
-
   const [equipments, setEquipments] = useState([] as any);
   useEffect(() => {
     const fetchData = async () => {
@@ -16,6 +16,16 @@ const HomePage = () => {
     }
     fetchData();
   }, [])
+
+  const applyEquipmentMethod = (data: EquipmentRequest) => {
+    const requestData = {
+      equipmentId: Number(data.equipmentId),
+      qty: data.qty,
+      userId: 1,
+      description: "TEST"
+    }
+    let promise = applyEquipment(requestData);
+  }
 
   return (
     <React.Fragment>
@@ -34,7 +44,8 @@ const HomePage = () => {
                       {item.description}
                     </CardText>
                     <CardText color={"primary"}>
-                      반출 가능 수량 : {item.qty}
+                      반출 가능 수량 : {item.qty} <br />
+                      <Button onClick={e => applyEquipmentMethod(item)} size={"sm"}>반출신청</Button>
                     </CardText>
                   </CardBody>
                 </Card>
