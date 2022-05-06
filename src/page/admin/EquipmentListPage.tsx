@@ -15,8 +15,9 @@ import {
   Table
 } from "reactstrap";
 import {useEffect, useState} from "react";
-import {CategoryRequest, categoryList} from "../../api/CategoryApi";
+import {categoryList} from "../../api/CategoryApi";
 import {createEquipment, equipmentList} from "../../api/EquipmentApi";
+import {CategoryRequest} from "../../types/CategoryType";
 
 const EquipmentListPage = () => {
 

@@ -1,7 +1,8 @@
 import AdminHeader from "./AdminHeader";
 import {Button, Card, CardBody, CardText, CardTitle, Col, Form, FormGroup, Input, Label, Table} from "reactstrap";
 import {useEffect, useState} from "react";
-import {createUser, getUserList, UserRequest} from "../../api/UserApi";
+import {createUser, getUserList} from "../../api/UserApi";
+import {UserRequest} from "../../types/UserType";
 
 const UserListPage = () => {
 

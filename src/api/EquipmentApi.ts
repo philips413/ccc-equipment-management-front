@@ -1,15 +1,6 @@
 import {axiosGetRequest, axiosPostRequest} from "../config/AxiosConfig";
+import {EquipmentRequest} from "../types/EquipmentType";
 
-export interface EquipmentRequest {
-  equipmentId?: number;
-  name: string,
-  category: number,
-  description?: string;
-  status?: string;
-  qty: number;
-  maxUseQty: number;
-  minUseQty: number;
-}
 
 const EQUIPMENT_PREFIX = "/equipment";
 

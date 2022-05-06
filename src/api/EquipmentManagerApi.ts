@@ -1,18 +1,6 @@
 import {axiosPostRequest} from "../config/AxiosConfig";
+import {ApplyEquipmentRequest} from "../types/EquipmentType";
 
-export interface ApplyEquipmentRequest {
-  equipmentId: number;
-  qty: number;
-  userId: number;
-  description: string;
-}
-
-export interface ApplyEquipmentResponse {
-  equipmentSerialId: string;
-  equipmentId: number;
-  equipmentName: string;
-  userId: number;
-}
 
 const EQUIPMENT_MANAGER_PREFIX = "/equipment/manage";
 

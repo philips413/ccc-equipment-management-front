@@ -1,15 +1,6 @@
 import {axiosGetRequest, axiosPostRequest} from "../config/AxiosConfig";
+import {UserRequest} from "../types/UserType";
 
-export interface UserRequest {
-  userSysId?: number;
-  name: string;
-  nickName?: string;
-  userId: string;
-  password: string;
-  level?: number;
-  profileImage?: string;
-  createdAt?: string;
-}
 
 const EQUIPMENT_PREFIX = "/user";
 

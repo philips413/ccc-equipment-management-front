@@ -2,9 +2,10 @@ import React, {useEffect, useState} from "react"
 import {ClientMain, Contents} from "../page/ClientPage";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import {equipmentList, EquipmentRequest} from "../api/EquipmentApi";
+import {equipmentList} from "../api/EquipmentApi";
 import {Button, Card, CardBody, CardText, CardTitle} from "reactstrap";
 import {applyEquipment} from "../api/EquipmentManagerApi";
+import {EquipmentRequest} from "../types/EquipmentType";
 
 
 const HomePage = () => {
@@ -18,13 +19,6 @@ const HomePage = () => {
   }, [])
 
   const applyEquipmentMethod = (data: EquipmentRequest) => {
-    const requestData = {
-      equipmentId: Number(data.equipmentId),
-      qty: data.qty,
-      userId: 1,
-      description: "TEST"
-    }
-    let promise = applyEquipment(requestData);
   }
 
   return (
