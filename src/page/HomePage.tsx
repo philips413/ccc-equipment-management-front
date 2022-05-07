@@ -3,13 +3,31 @@ import {ClientMain, Contents} from "../page/ClientPage";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import {equipmentList} from "../api/EquipmentApi";
-import {Button, Card, CardBody, CardText, CardTitle} from "reactstrap";
-import {applyEquipment} from "../api/EquipmentManagerApi";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardText,
+  CardTitle, Col,
+  Form, FormGroup, Input, Label,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader
+} from "reactstrap";
 import {EquipmentRequest} from "../types/EquipmentType";
 
 
 const HomePage = () => {
   const [equipments, setEquipments] = useState([] as any);
+  const [isOpenToggle, setIsOpenToggle] = useState(false);
+  const [selectItem, setSelectItem] = useState({
+    name: "",
+    hasQty: 0,
+    propose: "",
+    hp: "",
+    category: 1
+  });
   useEffect(() => {
     const fetchData = async () => {
       const data = await equipmentList();
@@ -19,7 +37,11 @@ const HomePage = () => {
   }, [])
 
   const applyEquipmentMethod = (data: EquipmentRequest) => {
+    setSelectItem(data);
+    doModelToggle();
   }
+
+  const doModelToggle = () => (setIsOpenToggle(!isOpenToggle));
 
   return (
     <React.Fragment>
@@ -48,6 +70,54 @@ const HomePage = () => {
           }
         </ClientMain>
       </Contents>
+      <Modal isOpen={isOpenToggle}>
+        <ModalHeader>
+          장비 반출 신청
+        </ModalHeader>
+        <ModalBody>
+          <Form>
+            <FormGroup row>
+              <Label
+                for="categoryName"
+                sm={2}
+              >
+                장비명
+              </Label>
+              <Col sm={4}>
+                <Input
+                  id="categoryName"
+                  name="categoryName"
+                  type="text"
+                  disabled={true}
+                  value={selectItem.name}
+                />
+              </Col>
+              <Label
+                for="description"
+                sm={2}
+              >
+                반출 갯수
+              </Label>
+              <Col sm={4}>
+                <Input
+                  id="description"
+                  name="description"
+                  type="text"
+                />
+              </Col>
+            </FormGroup>
+          </Form>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary">
+            Do Something
+          </Button>
+          &emsp;
+          <Button onClick={e=> doModelToggle()}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </Modal>
       <Footer />
     </React.Fragment>
   )
