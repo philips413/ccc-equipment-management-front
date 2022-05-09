@@ -1,4 +1,3 @@
-
 export interface EquipmentRequest {
   equipmentId?: number;
   name: string,
@@ -6,6 +5,17 @@ export interface EquipmentRequest {
   description?: string;
   status?: string;
   qty: number;
+}
+
+export interface EquipmentResponse {
+  equipmentId: number;
+  name: string;
+  category: number;
+  description: string;
+  status: number;
+  qty: number;
+  useQty: number;
+  createdAt: string;
 }
 
 export interface ApplyEquipmentRequest {
@@ -16,8 +26,4 @@ export interface ApplyEquipmentRequest {
   category: number;
   name: string;
   hp: string;
-}
-
-export interface ApplyEquipmentResponse {
-  equipmentSerialId: string;
 }

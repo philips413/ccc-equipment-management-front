@@ -196,8 +196,8 @@ const EquipmentListPage = () => {
                     <th>카테고리</th>
                     <th>설명</th>
                     <th>보유수량</th>
-                    <th>최소반출 수량</th>
-                    <th>최대반출 수량</th>
+                    <th>사용중 수량</th>
+                    <th>사용가능한 수량</th>
                     <th>등록일자</th>
                     <th>등록자</th>
                   </tr>
@@ -212,8 +212,8 @@ const EquipmentListPage = () => {
                           <td>{item.category}</td>
                           <td>{item.description}</td>
                           <td>{item.qty}</td>
-                          <td>{item.minUseQty}</td>
-                          <td>{item.maxUseQty}</td>
+                          <td>{item.useQty}</td>
+                          <td>{item.qty - item.useQty}</td>
                           <td>{item.createdAt}</td>
                           <td>{item.createdId}</td>
                         </tr>
